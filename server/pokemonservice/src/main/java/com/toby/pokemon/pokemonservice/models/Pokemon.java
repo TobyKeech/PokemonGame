@@ -91,6 +91,10 @@ public class Pokemon {
         this.attackList.add(attack);
     }
 
+    public int getNumberOfDefences(){
+        return this.defenceList.size();
+    }
+
     public void addDefence(Defence defence){
         this.defenceList.add(defence);
     }

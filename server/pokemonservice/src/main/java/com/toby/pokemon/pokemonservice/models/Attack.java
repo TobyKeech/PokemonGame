@@ -1,11 +1,24 @@
 package com.toby.pokemon.pokemonservice.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table( name = "attacks")
+
 public class Attack {
 
-    private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
 
+    @Column(name = "name")
+    private String name;
+    @Column(name = "value")
     private int value;
 
+
+    @ManyToOne
+    @JoinColumn(name = "character_id", nullable = false)
     private Pokemon pokemon;
 
     public Attack(String name, int value, Pokemon pokemon) {

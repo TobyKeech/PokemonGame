@@ -98,10 +98,10 @@ public class TestPokemon {
 
     @Test
     public void addDefence(){
-        charmander.addDefence(fireBlast);
-        charmander.addAttack(fireBlast);
-        charmander.addAttack(fireBlast);
-        assertEquals(3, charmander.getNumberOfAttacks());
+        pickachu.addDefence(electricBlock);
+        pickachu.addDefence(electricBlock);
+        pickachu.addDefence(electricBlock);
+        assertEquals(3, pickachu.getNumberOfDefences());
     }
 
 
