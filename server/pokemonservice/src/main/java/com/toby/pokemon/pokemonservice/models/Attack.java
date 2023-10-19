@@ -18,13 +18,23 @@ public class Attack {
 
 
     @ManyToOne
-    @JoinColumn(name = "character_id", nullable = false)
+    @JoinColumn(name = "pokemon_id", nullable = false)
     private Pokemon pokemon;
 
     public Attack(String name, int value, Pokemon pokemon) {
         this.name = name;
         this.value = value;
         this.pokemon = pokemon;
+    }
+
+    public Attack(){}
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getAttackName() {

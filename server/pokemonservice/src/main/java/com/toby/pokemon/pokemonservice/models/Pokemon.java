@@ -1,6 +1,8 @@
 package com.toby.pokemon.pokemonservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,6 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "pokemons")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 
 public class Pokemon {
 
@@ -24,13 +27,14 @@ public class Pokemon {
     private String type;
     @Column(name = "imgPath")
     private String imgpath;
-    @JsonIgnoreProperties({"pokemon"})
-    @OneToMany(mappedBy = "pokemon")
-    private List<Attack> attackList;
 
     @JsonIgnoreProperties({"pokemon"})
     @OneToMany(mappedBy = "pokemon")
-    private List<Defence> defenceList;
+    private List<Attack>attackList;
+
+    @JsonIgnoreProperties({"pokemon"})
+    @OneToMany(mappedBy = "pokemon")
+    private List<Defence>defenceList;
 
     public Pokemon ( String name, int hp, String type,String imgpath){
         this.name = name;
@@ -41,6 +45,8 @@ public class Pokemon {
         this.defenceList = new ArrayList<Defence>();
 
     }
+
+    public Pokemon(){};
 
     public Long getId() {
         return id;
@@ -78,6 +84,13 @@ public class Pokemon {
         return attackList;
     }
 
+    public void setAttackList(List<Attack> attackList) {
+        this.attackList = attackList;
+    }
+
+    public List<Defence> getDefenceList() {
+        return defenceList;
+    }
 
     public void setDefenceList(List<Defence> defenceList) {
         this.defenceList = defenceList;
