@@ -13,4 +13,24 @@ public class Defence {
         this.value = value;
         this.pokemon = pokemon;
     }
+
+    public String getDefenceName() {
+        return name;
+    }
+
+    public int getDefenceValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public Pokemon getPokemon() {
+        return pokemon;
+    }
+
+    public void setPokemon(Pokemon pokemon) {
+        this.pokemon = pokemon;
+    }
 }

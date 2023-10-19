@@ -78,15 +78,20 @@ public class Pokemon {
         return attackList;
     }
 
-    public void setAttackList(List<Attack> attackList) {
-        this.attackList = attackList;
-    }
-
-    public List<Defence> getDefenceList() {
-        return defenceList;
-    }
 
     public void setDefenceList(List<Defence> defenceList) {
         this.defenceList = defenceList;
+    }
+
+    public int getNumberOfAttacks(){
+        return this.attackList.size();
+    }
+
+    public void addAttack(Attack attack){
+        this.attackList.add(attack);
+    }
+
+    public void addDefence(Defence defence){
+        this.defenceList.add(defence);
     }
 }
