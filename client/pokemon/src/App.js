@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import PokemonContainer from './containers/PokemonContainer';
+import PokemonContainer from './containers/PokemonScreen';
 
 function App() {
   return (
